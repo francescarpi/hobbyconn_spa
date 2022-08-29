@@ -1,0 +1,154 @@
+{
+  "uuid": "261200a2-2645-49dd-bd72-1f13fdc4f3ab",
+  "lastMigration": 22,
+  "name": "Hobyconn",
+  "endpointPrefix": "api/v1",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "2420ced2-d54a-4a0b-bed3-207765f61175",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "user",
+      "responses": [
+        {
+          "uuid": "3f76d98b-cf9e-4f20-880b-ccf1865dbc82",
+          "body": "{\n  \"name\": \"Francesc\",\n  \"room\": {\n    \"name\": \"Global\",\n    \"id\": \"8f956364-1eb2-4fce-b421-ad1156146567\"\n  },\n  \"rooms\": [\n    {\n      \"name\": \"Global\",\n      \"id\": \"8f956364-1eb2-4fce-b421-ad1156146567\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "661d094b-b109-4eff-a4fa-ab0063b032da",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "my-hobbies",
+      "responses": [
+        {
+          "uuid": "026ba2f7-4eff-4107-9d5f-f61211fc2844",
+          "body": "[{\n  \"name\": \"World of Tanks (Blitz)\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be3\",\n  \"slug\": \"world-of-tanks\"\n}, {\n  \"name\": \"Paddle\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be4\",\n  \"slug\": \"paddle\"\n}]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "147f523c-308c-48b1-9d73-94a7d220bfe0",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "hobby/world-of-tanks",
+      "responses": [
+        {
+          "uuid": "21ec42e0-b9df-4642-9d30-dead1e5ea3bb",
+          "body": "{\n  \"name\": \"World of Tanks (Blitz)\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be3\",\n  \"slug\": \"world-of-tanks\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "9901056e-d854-457f-ac9e-4d3b05638365",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "hobby/paddle",
+      "responses": [
+        {
+          "uuid": "986f29c6-5f70-4db7-8b60-191c076971ee",
+          "body": "{\n  \"name\": \"Paddle\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be4\",\n  \"slug\": \"paddle\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
