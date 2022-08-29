@@ -12,12 +12,11 @@ const { hobbies } = toRefs(props)
 
 <template>
   <div>
-    <p>My subscribed hobbies: {{ hobbies.length }}</p>
+    <p>My subscribed hobbies:</p>
     <ul class="list-disc ml-8">
       <li v-for="hobby in hobbies" :key="hobby.id">
-        <a-link
-          :href="{ name: 'hobby-detail', params: { slug: hobby.slug } }"
-          >{{ hobby.name }}</a-link
+        <a-link :href="{ name: 'hobby-detail', params: { slug: hobby.slug } }"
+          >{{ hobby.name }} ({{ hobby.total_matches }})</a-link
         >
       </li>
     </ul>

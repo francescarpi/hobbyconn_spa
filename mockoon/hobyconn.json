@@ -15,7 +15,7 @@
       "responses": [
         {
           "uuid": "3f76d98b-cf9e-4f20-880b-ccf1865dbc82",
-          "body": "{\n  \"name\": \"Francesc\",\n  \"room\": {\n    \"name\": \"Global\",\n    \"id\": \"8f956364-1eb2-4fce-b421-ad1156146567\"\n  },\n  \"rooms\": [\n    {\n      \"name\": \"Global\",\n      \"id\": \"8f956364-1eb2-4fce-b421-ad1156146567\"\n    }\n  ]\n}",
+          "body": "{\n  \"name\": \"Francesc\",\n  \"room\": {\n    \"name\": \"Global\",\n    \"id\": \"8f956364-1eb2-4fce-b421-ad1156146567\"\n  },\n  \"rooms\": [\n    {\n      \"name\": \"Global\",\n      \"id\": \"8f956364-1eb2-4fce-b421-ad1156146567\"\n    }\n  ],\n  \"zone\": {\n    \"name\": \"Lloret de Mar\",\n    \"id\": \"8f956364-1eb2-4fce-b421-ad1156146568\"\n  },\n  \"zones\": [{\n    \"name\": \"Lloret de Mar\",\n    \"id\": \"8f956364-1eb2-4fce-b421-ad1156146568\"\n  }]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -40,7 +40,7 @@
       "responses": [
         {
           "uuid": "026ba2f7-4eff-4107-9d5f-f61211fc2844",
-          "body": "[{\n  \"name\": \"World of Tanks (Blitz)\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be3\",\n  \"slug\": \"world-of-tanks\"\n}, {\n  \"name\": \"Paddle\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be4\",\n  \"slug\": \"paddle\"\n}]",
+          "body": "[{\n  \"name\": \"World of Tanks (Blitz)\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be3\",\n  \"slug\": \"world-of-tanks\",\n  \"total_matches\": 1\n}, {\n  \"name\": \"Paddle\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be4\",\n  \"slug\": \"paddle\",\n  \"total_matches\": 0\n}]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -65,7 +65,7 @@
       "responses": [
         {
           "uuid": "21ec42e0-b9df-4642-9d30-dead1e5ea3bb",
-          "body": "{\n  \"name\": \"World of Tanks (Blitz)\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be3\",\n  \"slug\": \"world-of-tanks\"\n}",
+          "body": "{\n  \"name\": \"World of Tanks (Blitz)\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be3\",\n  \"slug\": \"world-of-tanks\",\n  \"description\": \"People who want plays to WOT\",\n  \"matches\": [{\n    \"name\": \"Manolo Escobar\",\n    \"id\": \"b8943fae-37c4-4297-9620-ff1f1670dbb0\"\n  }]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -90,7 +90,7 @@
       "responses": [
         {
           "uuid": "986f29c6-5f70-4db7-8b60-191c076971ee",
-          "body": "{\n  \"name\": \"Paddle\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be4\",\n  \"slug\": \"paddle\"\n}",
+          "body": "{\n  \"name\": \"Paddle\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be4\",\n  \"slug\": \"paddle\",\n  \"description\": \"People who want play paddle\",\n  \"matches\": []\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
