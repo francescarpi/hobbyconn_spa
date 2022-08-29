@@ -1,0 +1,18 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "vue/setup-compiler-macros": true,
+    "jest": true
+  },
+  "extends": ["plugin:vue/essential", "standard"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
+  "plugins": ["vue", "@typescript-eslint"],
+  "rules": {
+    "space-before-function-paren": "off"
+  }
+}
