@@ -19,7 +19,7 @@ onBeforeMount(() => {
 <template>
   <div v-if="user">
     <div class="w-full text-right my-4">
-      Hi, {{ user.name }}!
+      Hi, {{ user.name }}! ({{ user.zone.name }})
       <a-link :href="{ name: 'profile' }" class="ml-4">Profile</a-link>
       <a-link :href="{}" class="ml-4">Logout</a-link>
     </div>

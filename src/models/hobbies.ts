@@ -17,3 +17,8 @@ export interface IHobbyDetail {
   description: string
   matches: IUserMatch[]
 }
+
+export interface IHobbySearchResult {
+  name: string
+  id: string
+}

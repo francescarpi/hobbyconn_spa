@@ -2,7 +2,7 @@
 import { onMounted, ref } from 'vue'
 import type { Ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { useHobbyDetails } from '../../services/hobbies'
+import { useHobbyDetail } from '../../services/hobbies'
 import { IHobbyDetail } from '../../models/hobbies'
 import ATitle from '../../components/atoms/ATitle.vue'
 import AText from '../../components/atoms/AText.vue'
@@ -14,7 +14,7 @@ const hobby: Ref<IHobbyDetail | null> = ref(null)
 
 onMounted(async () => {
   const { slug } = route.params
-  hobby.value = await useHobbyDetails(slug as string)
+  hobby.value = await useHobbyDetail(slug as string)
 })
 </script>
 
