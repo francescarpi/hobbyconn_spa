@@ -14,7 +14,14 @@ const formSchema = [
   {
     $formkit: 'text',
     name: 'name',
-    label: 'Name'
+    label: 'Name',
+    validation: 'required|length:3,100'
+  },
+  {
+    $formkit: 'textarea',
+    name: 'description',
+    label: 'Description',
+    validation: 'required|length:10,300'
   },
   {
     $formkit: 'checkbox',
@@ -29,13 +36,6 @@ const handleSubmit = async () => {
   const response = await createHobby(formData.value)
   creationError.value = !response.success
   creationMessage.value = response.message
-
-  if (!creationError.value) {
-    formData.value = {
-      name: '',
-      require_geolocation: false
-    }
-  }
 }
 </script>
 
@@ -44,7 +44,7 @@ const handleSubmit = async () => {
     <a-title class="mb-4">Create new hobby</a-title>
     <p v-if="creationError" class="text-red-600 mb-4">{{ creationMessage }}</p>
     <p v-if="!creationError && creationMessage" class="text-green-600 mb-4">{{ creationMessage }}</p>
-    <form-kit type="form" @submit="handleSubmit" v-model="formData">
+    <form-kit type="form" @submit="handleSubmit" v-model="formData" submit-label="Create">
       <form-kit-schema :schema="formSchema" />
     </form-kit>
     <div class="mt-8">

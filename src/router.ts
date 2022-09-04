@@ -6,6 +6,9 @@ import InHobbyDetailPageVue from './views/in/InHobbyDetailPage.vue'
 import InProfile from './views/in/InProfile.vue'
 import InSubscribeHobbyVue from './views/in/InSubscribeHobby.vue'
 import InCreateHobbyPage from './views/in/InCreateHobbyPage.vue'
+import { routes as authRoutes } from './auth/router'
+import { useAuthStore } from './auth/store'
+import { LOGIN_URL_NAME } from './auth/constants'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -15,8 +18,13 @@ const router = createRouter({
       component: HomePage
     },
     {
+      path: '/auth',
+      children: authRoutes
+    },
+    {
       path: '/in',
       component: InBasePage,
+      meta: { requireAuth: true },
       children: [
         {
           path: '',
@@ -46,6 +54,13 @@ const router = createRouter({
       ]
     }
   ]
+})
+
+router.beforeEach((to, from) => {
+  const requireAuth = Boolean(to.meta.requireAuth)
+  if (requireAuth && !useAuthStore().isLogged) {
+    return { name: LOGIN_URL_NAME, query: { after: to.fullPath } }
+  }
 })
 
 export default router

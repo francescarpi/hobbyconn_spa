@@ -15,15 +15,11 @@ export const useUserStore = defineStore('user', {
       myHobbies: []
     } as RootState),
   actions: {
-    loadUser() {
-      api.get('/user').then((user: IUser | null) => {
-        this.user = user
-      })
-    },
     loadMyHobbies() {
       api.get('/my-hobbies').then((hobbies: IHobby[] | null) => {
         this.myHobbies = hobbies || []
       })
     }
-  }
+  },
+  getters: {}
 })

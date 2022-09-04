@@ -10,8 +10,4 @@ export interface IZone {
 
 export interface IUser {
   name: string
-  room: IRoom
-  rooms: IRoom[]
-  zone: IZone
-  zones: IZone[]
 }

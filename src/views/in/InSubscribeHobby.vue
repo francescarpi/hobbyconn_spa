@@ -34,12 +34,10 @@ const items = computed(() => {
       <p>{{ results.length }} results</p>
       <a-list :items="items">
         <template v-slot="slotProps">{{ slotProps.item.label }} (<a-link :href="{}">subscribe</a-link>)</template>
-        <template #lastElement v-if="results.length">
-          <a-link :href="{ name: 'create' }">Create new Hobby</a-link>
-        </template>
       </a-list>
     </div>
-    <div class="mt-8">
+    <div class="mt-8 flex gap-2">
+      <a-link :href="{ name: 'create' }">Create new Hobby</a-link>
       <a-link :href="{ name: 'in-home' }">Back to dashboard</a-link>
     </div>
   </div>
