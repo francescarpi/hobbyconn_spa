@@ -13,6 +13,19 @@ class Api {
         return null
       })
   }
+
+  public post(path: string, data: any): Promise<any | null> {
+    return fetch(`${this.host}${path}`, {
+      method: 'post',
+      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .then((response) => response.json())
+      .catch((error) => {
+        console.error('RESPONSE ERROR', error)
+        return null
+      })
+  }
 }
 
 const api = new Api('http://localhost:3001/api/v1')

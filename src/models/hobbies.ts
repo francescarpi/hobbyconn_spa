@@ -22,3 +22,13 @@ export interface IHobbySearchResult {
   name: string
   id: string
 }
+
+export interface IHobbyCreate {
+  name: string
+  require_geolocation: boolean
+}
+
+export interface IApiResponse {
+  success: boolean
+  message: string
+}

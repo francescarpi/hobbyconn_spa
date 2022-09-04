@@ -154,6 +154,77 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "d1673888-5a97-4be2-9ce4-e5d62d84ec74",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "hobby/create/",
+      "responses": [
+        {
+          "uuid": "56473621-dcea-473f-a0dd-1bdcbc32ff36",
+          "body": "{\n  \"success\": true,\n  \"message\": \"Creation successfully\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "0c52cf46-f8bc-445e-9949-39e4b20274c9",
+          "body": "{\n  \"success\": false,\n  \"message\": \"Empty name\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "name",
+              "value": "",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "861ef985-1df1-4080-80c3-6a2aeef2dfe7",
+          "body": "{\n  \"success\": false,\n  \"message\": \"Hobby already exists\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "name",
+              "value": "pubg",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "proxyMode": false,

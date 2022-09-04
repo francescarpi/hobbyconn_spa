@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 import type { Ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useHobbyDetail } from '../../services/hobbies'
@@ -8,6 +8,7 @@ import ATitle from '../../components/atoms/ATitle.vue'
 import AText from '../../components/atoms/AText.vue'
 import ALoading from '../../components/atoms/ALoading.vue'
 import ALink from '../../components/atoms/ALink.vue'
+import AList from '../../components/atoms/AList.vue'
 
 const route = useRoute()
 const hobby: Ref<IHobbyDetail | null> = ref(null)
@@ -15,6 +16,10 @@ const hobby: Ref<IHobbyDetail | null> = ref(null)
 onMounted(async () => {
   const { slug } = route.params
   hobby.value = await useHobbyDetail(slug as string)
+})
+
+const matches = computed(() => {
+  return hobby.value ? hobby.value?.matches.map((item) => ({ label: item.name, key: item.id })) : []
 })
 </script>
 
@@ -25,11 +30,11 @@ onMounted(async () => {
       <a-text>{{ hobby.description }}</a-text>
       <div class="mt-4">
         <h2>Matches:</h2>
-        <ul class="list-disc ml-8" v-if="hobby.matches.length">
-          <li v-for="match in hobby.matches" :key="match.id">
-            {{ match.name }}
-          </li>
-        </ul>
+        <a-list :items="matches" v-if="matches.length">
+          <template v-slot="slotProps">
+            {{ slotProps.item.label }} (<a-link :href="{}">contact with him</a-link>)
+          </template>
+        </a-list>
         <p v-else>No matches...</p>
       </div>
       <div class="mt-8">
