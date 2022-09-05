@@ -11,12 +11,12 @@
       "uuid": "2420ced2-d54a-4a0b-bed3-207765f61175",
       "documentation": "",
       "method": "get",
-      "endpoint": "user",
+      "endpoint": "settings",
       "responses": [
         {
           "uuid": "3f76d98b-cf9e-4f20-880b-ccf1865dbc82",
-          "body": "{\n  \"name\": \"Francesc\",\n  \"room\": { \n    \"name\": \"Global\",\n    \"id\": \"8f956364-1eb2-4fce-b421-ad1156146567\"\n  },\n  \"rooms\": [\n    {\n      \"name\": \"Global\",\n      \"id\": \"8f956364-1eb2-4fce-b421-ad1156146567\"\n    }\n  ],\n  \"zone\": {\n    \"name\": \"Lloret de Mar\",\n    \"id\": \"8f956364-1eb2-4fce-b421-ad1156146568\"\n  },\n  \"zones\": [{\n    \"name\": \"Lloret de Mar\",\n    \"id\": \"8f956364-1eb2-4fce-b421-ad1156146568\"\n  }]\n}",
-          "latency": 0,
+          "body": "{\n  \"room\": { \n    \"name\": \"Global\",\n    \"id\": \"8f956364-1eb2-4fce-b421-ad1156146567\"\n  },\n  \"rooms\": [\n    {\n      \"name\": \"Global\",\n      \"id\": \"8f956364-1eb2-4fce-b421-ad1156146567\"\n    }\n  ],\n  \"zone\": {\n    \"name\": \"Lloret de Mar\",\n    \"id\": \"8f956364-1eb2-4fce-b421-ad1156146568\"\n  },\n  \"zones\": [{\n    \"name\": \"Lloret de Mar\",\n    \"id\": \"8f956364-1eb2-4fce-b421-ad1156146568\"\n  }]\n}",
+          "latency": 1000,
           "statusCode": 200,
           "label": "",
           "headers": [],

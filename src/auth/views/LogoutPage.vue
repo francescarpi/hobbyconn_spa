@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-onMounted(() => {})
+import { useAuthStore } from '../store'
+import { getInstance } from '../services'
+
+onMounted(() => {
+  const auth = getInstance(useAuthStore().driver)
+  auth.logout()
+})
 </script>
 
 <template>

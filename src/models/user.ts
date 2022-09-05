@@ -8,6 +8,9 @@ export interface IZone {
   id: string
 }
 
-export interface IUser {
-  name: string
+export interface ISettings {
+  room: IRoom
+  rooms: IRoom[]
+  zone: IZone
+  zones: IZone[]
 }

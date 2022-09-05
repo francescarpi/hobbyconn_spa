@@ -13,6 +13,11 @@ export class DummyOauth extends BaseOauth {
     store.setUser({
       name: 'Dummy User'
     })
-    router.push('/')
+    router.push({ name: 'in-home' })
+  }
+
+  public logout(): void {
+    const store = useAuthStore()
+    store.setUser(null)
   }
 }

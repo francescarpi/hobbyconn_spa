@@ -4,4 +4,5 @@ export interface IAuthUser {
 
 export interface IAuthState {
   user: IAuthUser | null
+  driver: string
 }

@@ -16,8 +16,6 @@ onBeforeMount(() => {
 <template>
   <div>
     <s-my-hobbies-list :hobbies="myHobbies" class="my-4" />
-    <a-link :href="{ name: 'subscribe' }" class="mt-2"
-      >Subscribe to a new hobby</a-link
-    >
+    <a-link :href="{ name: 'subscribe' }" class="mt-2">Subscribe to a new hobby</a-link>
   </div>
 </template>
