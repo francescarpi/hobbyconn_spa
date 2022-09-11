@@ -8,3 +8,6 @@ declare module '*.vue' {
 }
 
 declare module 'vue3-google-oauth2'
+
+// eslint-disable-next-line no-unused-vars
+declare const google: any

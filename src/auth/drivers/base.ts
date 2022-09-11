@@ -7,7 +7,7 @@ export class BaseOauth {
     throw new Error('logout: not implemented')
   }
 
-  public callback(): void {
+  public callback(data?: any): void {
     throw new Error('callback: not implemented')
   }
 }
