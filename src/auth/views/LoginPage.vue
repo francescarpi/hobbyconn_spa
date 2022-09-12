@@ -2,7 +2,7 @@
 import AButton from '../../components/atoms/AButton.vue'
 import { getInstance } from '../services'
 
-const login = (name: string) => {
+const login = async (name: string) => {
   const authInstance = getInstance(name)
   authInstance.login()
 }

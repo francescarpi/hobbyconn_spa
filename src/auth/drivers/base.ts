@@ -1,5 +1,5 @@
 export class BaseOauth {
-  public login(): void {
+  public async login(): Promise<void> {
     throw new Error('login: not implemented')
   }
 
