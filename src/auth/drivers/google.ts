@@ -2,10 +2,9 @@
 /* eslint no-undef: ["error", { "typeof": true }] */
 
 import { BaseOauth } from './base'
-import { JWTDecode } from '../../utils/jwt'
-import { useAuthStore } from '../store'
 import router from '../../router'
-import { OAuthResponse, OAuthToken } from '../models'
+import { OAuthResponse } from '../models'
+import { CALLBACK_URL_NAME } from '../constants'
 
 export class GoogleOauth extends BaseOauth {
   public async login(): Promise<void> {
@@ -19,25 +18,11 @@ export class GoogleOauth extends BaseOauth {
       google.accounts.id.initialize({
         client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
         callback: (user: OAuthResponse) => {
-          this.callback(user.credential)
+          router.push({ name: CALLBACK_URL_NAME, query: { driver: 'google', token: user.credential } })
         }
       })
       // Shows the google login prompt
       google.accounts.id.prompt()
     })
-  }
-
-  public callback(token: string): void {
-    const user: OAuthToken = JWTDecode(token)
-    const store = useAuthStore()
-    store.setUser({
-      name: user.name
-    })
-    router.push({ name: 'in-home' })
-  }
-
-  public logout(): void {
-    const store = useAuthStore()
-    store.setUser(null)
   }
 }

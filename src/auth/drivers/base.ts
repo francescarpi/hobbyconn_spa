@@ -1,13 +1,24 @@
+import { useAuthStore } from '../store'
+import { JWTDecode } from '../../utils/jwt'
+import router from '../../router'
+import { OAuthToken } from '../models'
+
 export class BaseOauth {
   public async login(): Promise<void> {
     throw new Error('login: not implemented')
   }
 
   public logout(): void {
-    throw new Error('logout: not implemented')
+    const store = useAuthStore()
+    store.setUser(null)
   }
 
-  public callback(data?: any): void {
-    throw new Error('callback: not implemented')
+  public callback(token: string): void {
+    const user: OAuthToken = JWTDecode(token)
+    const store = useAuthStore()
+    store.setUser({
+      name: user.name
+    })
+    router.push({ name: 'in-home' })
   }
 }

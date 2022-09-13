@@ -5,9 +5,9 @@ import { useRoute } from 'vue-router'
 
 onMounted(() => {
   const route = useRoute()
-  const { driver } = route.query
+  const { driver, token } = route.query
   const authInstance = getInstance(driver as string)
-  authInstance.callback()
+  authInstance.callback(token as string)
 })
 </script>
 
