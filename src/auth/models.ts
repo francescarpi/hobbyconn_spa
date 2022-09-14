@@ -1,14 +1,17 @@
-export interface IAuthUser {
+export interface OAuthToken {
   name: string
+  aud: string
+  azp: string
+  email_verified: boolean
+  exp: number
+  picture: string
+  iss: string
+  sub: string
 }
 
 export interface IAuthState {
-  user: IAuthUser | null
+  user: OAuthToken | null
   driver: string
-}
-
-export interface OAuthToken {
-  name: string
 }
 
 export interface OAuthResponse {

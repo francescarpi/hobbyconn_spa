@@ -3,8 +3,9 @@
 
 import { BaseOauth } from './base'
 import router from '../../router'
-import { OAuthResponse } from '../models'
+import { OAuthResponse, OAuthToken } from '../models'
 import { CALLBACK_URL_NAME } from '../constants'
+import { useAuthStore } from '../store'
 
 export class GoogleOauth extends BaseOauth {
   public async login(): Promise<void> {
@@ -21,8 +22,50 @@ export class GoogleOauth extends BaseOauth {
           router.push({ name: CALLBACK_URL_NAME, query: { driver: 'google', token: user.credential } })
         }
       })
+
       // Shows the google login prompt
       google.accounts.id.prompt()
+
+      // TODO: Add a listener if user state change
     })
+  }
+
+  protected checkToken(token: OAuthToken): boolean {
+    if (token.aud !== import.meta.env.VITE_GOOGLE_CLIENT_ID) {
+      return false
+    }
+
+    if (token.azp !== import.meta.env.VITE_GOOGLE_CLIENT_ID) {
+      return false
+    }
+
+    if (token.iss !== 'https://accounts.google.com') {
+      return false
+    }
+
+    if (!token.email_verified) {
+      return false
+    }
+
+    const now = Math.floor(Date.now() / 1000)
+    if (token.exp < now) {
+      return false
+    }
+
+    return true
+  }
+
+  public logout(): void {
+    const store = useAuthStore()
+    if (store.user) {
+      google.accounts.id.revoke(store.user.sub)
+    }
+    super.logout()
+  }
+
+  public isLogged(): boolean {
+    // TODO: Check if user is still logged
+    console.log(google.accounts.id)
+    return true
   }
 }
