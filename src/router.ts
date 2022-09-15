@@ -58,7 +58,7 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
   const requireAuth = Boolean(to.meta.requireAuth)
-  if (requireAuth && !useAuthStore().isLogged) {
+  if (requireAuth && !useAuthStore().isLogged()) {
     return { name: LOGIN_URL_NAME, query: { after: to.fullPath } }
   }
 })

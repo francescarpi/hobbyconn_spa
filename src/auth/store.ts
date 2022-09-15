@@ -14,16 +14,16 @@ export const useAuthStore = defineStore('auth', {
     },
     setDriver(driver: string): void {
       this.driver = driver
+    },
+    isLogged(): boolean {
+      if (!this.user) {
+        return false
+      }
+      const authInstance = getInstance(this.driver)
+      return authInstance.isLogged()
     }
   },
   getters: {
-    isLogged: (state) => {
-      if (!state.user) {
-        return false
-      }
-      const authInstance = getInstance(state.driver)
-      return authInstance.isLogged()
-    },
     name: (state) => state.user?.name,
     avatar: (state) => state.user?.picture
   }
