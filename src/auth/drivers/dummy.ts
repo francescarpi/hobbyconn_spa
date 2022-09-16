@@ -18,8 +18,4 @@ export class DummyOauth extends BaseOauth {
   protected checkToken(token: OAuthToken): boolean {
     return true
   }
-
-  public isLogged(): boolean {
-    return true
-  }
 }

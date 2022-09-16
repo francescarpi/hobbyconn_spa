@@ -12,6 +12,7 @@ export class BaseOauth {
   public logout(): void {
     const store = useAuthStore()
     store.setUser(null)
+    store.setToken(null)
   }
 
   public callback(token: string): void {
@@ -23,6 +24,7 @@ export class BaseOauth {
 
     const store = useAuthStore()
     store.setUser(user)
+    store.setToken(token)
     router.push({ name: 'in-home' })
   }
 
@@ -31,6 +33,11 @@ export class BaseOauth {
   }
 
   public isLogged(): boolean {
-    throw new Error('isLogged: not implemented')
+    const store = useAuthStore()
+    if (!store.user) {
+      return false
+    }
+    const now = Math.floor(Date.now() / 1000)
+    return store.user.exp >= now
   }
 }

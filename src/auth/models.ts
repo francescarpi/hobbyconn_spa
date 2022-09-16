@@ -12,6 +12,7 @@ export interface OAuthToken {
 export interface IAuthState {
   user: OAuthToken | null
   driver: string
+  token: string | null
 }
 
 export interface OAuthResponse {

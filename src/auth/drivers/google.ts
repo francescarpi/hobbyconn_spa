@@ -62,10 +62,4 @@ export class GoogleOauth extends BaseOauth {
     }
     super.logout()
   }
-
-  public isLogged(): boolean {
-    // TODO: Check if user is still logged
-    console.log(google.accounts.id)
-    return true
-  }
 }
