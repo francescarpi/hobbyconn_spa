@@ -17,7 +17,6 @@ const login = async (name: string) => {
     <p>You're not logged</p>
     <div class="flex gap-2">
       <a-button class="mt-2" @click="login('google')" :disabled="disabled">Login with Google</a-button>
-      <a-button class="mt-2" @click="login('apple')" :disabled="disabled">Login with Apple</a-button>
       <a-button class="mt-2" @click="login('dummy')" :disabled="disabled">Login with Dummy</a-button>
     </div>
   </div>

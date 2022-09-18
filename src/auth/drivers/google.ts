@@ -8,13 +8,15 @@ import { CALLBACK_URL_NAME } from '../constants'
 import { useAuthStore } from '../store'
 
 export class GoogleOauth extends BaseOauth {
-  public async login(): Promise<void> {
-    // Inject the google api script to the dom
+  private injectScript(): HTMLElement {
     const script = document.createElement('script')
     script.src = 'https://accounts.google.com/gsi/client'
     document.head.appendChild(script)
+    return script
+  }
 
-    // Once it's loaded, the client can be initiated
+  public async login(): Promise<void> {
+    const script = this.injectScript()
     await script.addEventListener('load', () => {
       google.accounts.id.initialize({
         client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
@@ -25,8 +27,6 @@ export class GoogleOauth extends BaseOauth {
 
       // Shows the google login prompt
       google.accounts.id.prompt()
-
-      // TODO: Add a listener if user state change
     })
   }
 
@@ -58,7 +58,15 @@ export class GoogleOauth extends BaseOauth {
   public logout(): void {
     const store = useAuthStore()
     if (store.user) {
-      google.accounts.id.revoke(store.user.sub)
+      // If the page has been reload, the google object doesn't exist and is necessary to load the client again
+      if (typeof google === 'undefined') {
+        const script = this.injectScript()
+        script.addEventListener('load', () => {
+          google.accounts.id.revoke(store.user.sub)
+        })
+      } else {
+        google.accounts.id.revoke(store.user.sub)
+      }
     }
     super.logout()
   }

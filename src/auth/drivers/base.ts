@@ -1,8 +1,9 @@
-import { useAuthStore } from '../store'
 import { JWTDecode } from '../../utils/jwt'
 import router from '../../router'
 import { OAuthToken } from '../models'
 import { ERROR_URL_NAME } from '../constants'
+import { useAuthStore } from '../store'
+import { useUserStore } from '../../stores/user'
 
 export class BaseOauth {
   public async login(): Promise<void> {
@@ -10,9 +11,8 @@ export class BaseOauth {
   }
 
   public logout(): void {
-    const store = useAuthStore()
-    store.setUser(null)
-    store.setToken(null)
+    useAuthStore().$reset()
+    useUserStore().$reset()
   }
 
   public callback(token: string): void {
