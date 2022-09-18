@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2">
+  <div class="p-4">
     <ul class="my-2 flex">
       <li class="mr-4">
         <router-link to="/" class="text-blue-500">Home</router-link>

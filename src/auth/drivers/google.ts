@@ -58,14 +58,15 @@ export class GoogleOauth extends BaseOauth {
   public logout(): void {
     const store = useAuthStore()
     if (store.user) {
+      const { sub } = store.user
       // If the page has been reload, the google object doesn't exist and is necessary to load the client again
       if (typeof google === 'undefined') {
         const script = this.injectScript()
         script.addEventListener('load', () => {
-          google.accounts.id.revoke(store.user.sub)
+          google.accounts.id.revoke(sub)
         })
       } else {
-        google.accounts.id.revoke(store.user.sub)
+        google.accounts.id.revoke(sub)
       }
     }
     super.logout()

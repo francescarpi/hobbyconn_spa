@@ -3,7 +3,7 @@ import { useUserStore } from '../../stores/user'
 import { storeToRefs } from 'pinia'
 import { onBeforeMount } from 'vue'
 import SMyHobbiesList from '../../components/sections/SMyHobbiesList.vue'
-import ALink from '../../components/atoms/ALink.vue'
+import AButton from '@/components/atoms/AButton.vue'
 
 const userState = useUserStore()
 const { myHobbies } = storeToRefs(userState)
@@ -16,6 +16,8 @@ onBeforeMount(() => {
 <template>
   <div>
     <s-my-hobbies-list :hobbies="myHobbies" class="my-4" />
-    <a-link :href="{ name: 'subscribe' }" class="mt-2">Subscribe to a new hobby</a-link>
+    <div class="flex justify-end">
+      <a-button :href="{ name: 'subscribe' }" class="mt-10">Subscribe to a new hobby</a-button>
+    </div>
   </div>
 </template>

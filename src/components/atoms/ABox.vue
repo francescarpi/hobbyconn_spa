@@ -1,0 +1,11 @@
+<script setup lang="ts"></script>
+
+<template>
+  <div class="box"><slot /></div>
+</template>
+
+<style scoped lang="scss">
+.box {
+  @apply border p-2 border-black shadow-block;
+}
+</style>
