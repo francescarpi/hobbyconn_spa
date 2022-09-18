@@ -27,7 +27,7 @@ const handlerClick = () => {
 
 <template>
   <button
-    class="bg-gray-100 text-black px-4 py-2 border-2 border-black rounded shadow-block"
+    class="bg-gray-100 text-black px-4 py-2 border-2 border-black rounded-lg shadow-block"
     :disabled="disabled"
     @click="handlerClick">
     <slot />
