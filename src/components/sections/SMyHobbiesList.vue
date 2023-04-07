@@ -26,8 +26,10 @@ const goToHobby = (hobby: IHobby) => {
 
     <div class="flex gap-4">
       <a-box v-for="hobby in hobbies" :key="hobby.id" @click="goToHobby(hobby)" class="cursor-pointer">
-        <h1 class="font-bold mb-2">{{ hobby.name }}</h1>
-        <p>Total matches: <a-match-counter :number="hobby.total_matches" /></p>
+        <div class="flex flex-col justify-between h-full">
+          <h1 class="font-bold mb-2">{{ hobby.name }}</h1>
+          <p>Total matches: <a-match-counter :number="hobby.total_matches" /></p>
+        </div>
       </a-box>
     </div>
   </div>

@@ -1,5 +1,6 @@
 export interface OAuthToken {
   name: string
+  given_name: string
   aud: string
   azp: string
   email_verified: boolean

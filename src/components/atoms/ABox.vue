@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="box"><slot /></div>
+  <div class="box w-full"><slot /></div>
 </template>
 
 <style scoped lang="scss">

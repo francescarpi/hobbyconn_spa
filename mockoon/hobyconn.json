@@ -1,6 +1,6 @@
 {
   "uuid": "261200a2-2645-49dd-bd72-1f13fdc4f3ab",
-  "lastMigration": 22,
+  "lastMigration": 24,
   "name": "Hobyconn",
   "endpointPrefix": "api/v1",
   "latency": 0,
@@ -26,7 +26,9 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
         }
       ],
       "enabled": true,
@@ -40,7 +42,7 @@
       "responses": [
         {
           "uuid": "026ba2f7-4eff-4107-9d5f-f61211fc2844",
-          "body": "[{\n  \"name\": \"World of Tanks (Blitz)\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be3\",\n  \"slug\": \"world-of-tanks\",\n  \"total_matches\": 1\n}, {\n  \"name\": \"Paddle\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be4\",\n  \"slug\": \"paddle\",\n  \"total_matches\": 0\n}]",
+          "body": "[{\n  \"name\": \"World of Tanks (Blitz)\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be3\",\n  \"slug\": \"world-of-tanks\",\n  \"total_matches\": 2\n}, {\n  \"name\": \"Paddle\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be4\",\n  \"slug\": \"paddle\",\n  \"total_matches\": 0\n}]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -51,7 +53,9 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
         }
       ],
       "enabled": true,
@@ -65,7 +69,7 @@
       "responses": [
         {
           "uuid": "21ec42e0-b9df-4642-9d30-dead1e5ea3bb",
-          "body": "{\n  \"name\": \"World of Tanks (Blitz)\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be3\",\n  \"slug\": \"world-of-tanks\",\n  \"description\": \"People who want plays to WOT\",\n  \"matches\": [{\n    \"name\": \"Manolo Escobar\",\n    \"id\": \"b8943fae-37c4-4297-9620-ff1f1670dbb0\"\n  }]\n}",
+          "body": "{\n  \"name\": \"World of Tanks (Blitz)\",\n  \"id\": \"b51580e0-3cfc-4d14-be0d-951b72984be3\",\n  \"slug\": \"world-of-tanks\",\n  \"description\": \"People who want plays to WOT\",\n  \"matches\": [{\n    \"name\": \"Manolo Escobar\",\n    \"id\": \"b8943fae-37c4-4297-9620-ff1f1670dbb0\"\n  }, {\n    \"name\": \"Pepito de los Palotes\",\n    \"id\": \"b8943fae-37c4-4297-9620-ff1f1670d123\"\n  }]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -76,7 +80,9 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
         }
       ],
       "enabled": true,
@@ -101,7 +107,9 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
         }
       ],
       "enabled": true,
@@ -126,7 +134,9 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
         },
         {
           "uuid": "b5cb427a-d534-4fd8-9bec-52eabe13e425",
@@ -149,7 +159,9 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": false
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
         }
       ],
       "enabled": true,
@@ -174,7 +186,9 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
         },
         {
           "uuid": "0c52cf46-f8bc-445e-9949-39e4b20274c9",
@@ -197,7 +211,9 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": false
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
         },
         {
           "uuid": "861ef985-1df1-4080-80c3-6a2aeef2dfe7",
@@ -220,7 +236,9 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": false
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE"
         }
       ],
       "enabled": true,
@@ -269,5 +287,6 @@
       "key": "",
       "value": ""
     }
-  ]
+  ],
+  "data": []
 }

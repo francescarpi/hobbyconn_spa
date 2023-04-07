@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import type { Ref } from 'vue'
-import { useSearchHobby } from '../../services/hobbies'
-import { IHobbySearchResult } from '../../models/hobbies'
-import AList from '../../components/atoms/AList.vue'
-import ALink from '../../components/atoms/ALink.vue'
+import { useSearchHobby } from '@/services/hobbies'
+import { IHobbySearchResult } from '@/models/hobbies'
+import AList from '@/components/atoms/AList.vue'
+import ALink from '@/components/atoms/ALink.vue'
+import MTitleWithBackButton from '@/components/modules/MTitleWithBackButton.vue'
 
 const hobbyName = ref('')
 const results: Ref<IHobbySearchResult[]> = ref([])
@@ -23,10 +24,11 @@ const items = computed(() => {
 
 <template>
   <div>
+    <m-title-with-back-button class="mb-4">Subscribe to hobby</m-title-with-back-button>
     <FormKit
       type="text"
       label="Hobby name"
-      help="Search the hobby by name"
+      placeholder="Enter the name of the hobby"
       maxlength="30"
       v-model="hobbyName"
       @input="handleChangeName" />
