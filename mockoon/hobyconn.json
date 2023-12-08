@@ -1,11 +1,11 @@
 {
   "uuid": "261200a2-2645-49dd-bd72-1f13fdc4f3ab",
-  "lastMigration": 24,
+  "lastMigration": 27,
   "name": "Hobyconn",
   "endpointPrefix": "api/v1",
   "latency": 0,
   "port": 3001,
-  "hostname": "0.0.0.0",
+  "hostname": "",
   "routes": [
     {
       "uuid": "2420ced2-d54a-4a0b-bed3-207765f61175",
@@ -32,7 +32,8 @@
         }
       ],
       "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http"
     },
     {
       "uuid": "661d094b-b109-4eff-a4fa-ab0063b032da",
@@ -59,7 +60,8 @@
         }
       ],
       "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http"
     },
     {
       "uuid": "147f523c-308c-48b1-9d73-94a7d220bfe0",
@@ -86,7 +88,8 @@
         }
       ],
       "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http"
     },
     {
       "uuid": "9901056e-d854-457f-ac9e-4d3b05638365",
@@ -113,7 +116,8 @@
         }
       ],
       "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http"
     },
     {
       "uuid": "a1f9a2f3-3fe5-4412-84de-504663fbf5e5",
@@ -165,7 +169,8 @@
         }
       ],
       "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http"
     },
     {
       "uuid": "d1673888-5a97-4be2-9ce4-e5d62d84ec74",
@@ -242,7 +247,8 @@
         }
       ],
       "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http"
     }
   ],
   "proxyMode": false,
@@ -288,5 +294,32 @@
       "value": ""
     }
   ],
-  "data": []
+  "data": [],
+  "folders": [],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "2420ced2-d54a-4a0b-bed3-207765f61175"
+    },
+    {
+      "type": "route",
+      "uuid": "661d094b-b109-4eff-a4fa-ab0063b032da"
+    },
+    {
+      "type": "route",
+      "uuid": "147f523c-308c-48b1-9d73-94a7d220bfe0"
+    },
+    {
+      "type": "route",
+      "uuid": "9901056e-d854-457f-ac9e-4d3b05638365"
+    },
+    {
+      "type": "route",
+      "uuid": "a1f9a2f3-3fe5-4412-84de-504663fbf5e5"
+    },
+    {
+      "type": "route",
+      "uuid": "d1673888-5a97-4be2-9ce4-e5d62d84ec74"
+    }
+  ]
 }
